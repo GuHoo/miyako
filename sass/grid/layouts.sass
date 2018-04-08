@@ -1,0 +1,71 @@
+@import "../utilities/responsiveness.sass"
+
+.full-grid
+  display: grid
+  width: 100vw
+  height: 100vh
+  grid-gap: 0
+
+  @for $i from 1 through 16
+    @for $j from 1 through 16
+      &.is-#{$i}-#{$j}
+        grid-template-columns: repeat($i, +1fr)
+        grid-template-rows: repeat($j, +1fr)
+
+  +mobile
+    @for $i from 1 through 16
+      @for $j from 1 through 16
+        &.is-#{$i}-#{$j}-mobile
+          grid-template-columns: repeat($i, +1fr)
+          grid-template-rows: repeat($j, +1fr)
+
+  +tablet
+    @for $i from 1 through 16
+      @for $j from 1 through 16
+        &.is-#{$i}-#{$j}-tablet
+          grid-template-columns: repeat($i, +1fr)
+          grid-template-rows: repeat($j, +1fr)
+
+  +touch
+    @for $i from 1 through 16
+      @for $j from 1 through 16
+        &.is-#{$i}-#{$j}-touch
+          grid-template-columns: repeat($i, +1fr)
+          grid-template-rows: repeat($j, +1fr)
+
+  +desktop
+    @for $i from 1 through 16
+      @for $j from 1 through 16
+        &.is-#{$i}-#{$j}-desktop
+          grid-template-columns: repeat($i, +1fr)
+          grid-template-rows: repeat($j, +1fr)
+
+  +widescreen
+    @for $i from 1 through 16
+      @for $j from 1 through 16
+        &.is-#{$i}-#{$j}-widescreen
+          grid-template-columns: repeat($i, +1fr)
+          grid-template-rows: repeat($j, +1fr)
+
+  +fullhd
+    @for $i from 1 through 16
+      @for $j from 1 through 16
+        &.is-#{$i}-#{$j}-fullhd
+          grid-template-columns: repeat($i, +1fr)
+          grid-template-rows: repeat($j, +1fr)
+
+@for $y from 1 through 16
+  @for $x from 1 through 16
+    @for $h from $y through 16
+      @for $w from $x through 16
+        .item-#{$x}-#{$y}__#{$h}-#{$w}
+          grid-column: #{$x} / span #{$w}
+          grid-row: #{$y} / span #{$h}
++mobile
+  @for $y from 1 through 16
+    @for $x from 1 through 16
+      @for $h from $y through 16
+        @for $w from $x through 16
+          .item-#{$x}-#{$y}__#{$h}-#{$w}-mobile
+            grid-column: #{$x} / span #{$w}
+            grid-row: #{$y} / span #{$h}
